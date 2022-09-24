@@ -1,0 +1,19 @@
+.ws-badge{
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 10px;
+}
+
+.ws-badge.ws-badge-premium{
+    background: #f6f7f7;
+    border: 1px solid #2271b1;
+    color: #2271b1;
+}
+
+.tab-content .tab-item{
+    display: none;
+}
+
+.tab-content .tab-item.active{
+    display: block;
+}

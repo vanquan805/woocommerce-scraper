@@ -1,0 +1,2 @@
+<?php require_once( WooCommerce_Scraper::$instance->plugin_directory . '/templates/meta-boxes/nav-tabs.php' ); ?>
+<?php require_once( WooCommerce_Scraper::$instance->plugin_directory . '/templates/meta-boxes/tab-content.php' ); ?>
