@@ -103,7 +103,7 @@ if (!class_exists('WooCommerce_Scraper')) {
                 return $plugin_meta;
             }
 
-            $plugin_meta[] = '<a href="https://github.com/vanquan805">' . esc_html__('Github', 'woocommerce-scraper') . '</a>';
+            $plugin_meta[] = '<a href="https://github.com/vanquan805/woocommerce-scraper">' . esc_html__('Github', 'woocommerce-scraper') . '</a>';
             $plugin_meta[] = '<a href="https://t.me/quannv27" title="' . esc_html__('Support.', 'woocommerce-scraper') . '">' . esc_html__('Support', 'woocommerce-scraper') . '</a>';
             $plugin_meta[] = '<a href="mailto:vanquan805@gmail.com" title="' . esc_html__('Send an email to the developer.', 'woocommerce-scraper') . '">' . esc_html__('Contact', 'woocommerce-scraper') . '</a>';
 
