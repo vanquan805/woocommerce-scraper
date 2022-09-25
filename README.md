@@ -9,3 +9,5 @@ As you know, some hosting providers don't support virtual cron, so some scraping
 **SUPPORT CRAWLING DATA THAT IS RENDERED BY JAVASCRIPT**
 
 Our plugin supports the collection of data rendered by Javascript that other plugins can't do.
+
+[Webiste](https://lienlau.com/) | [Support](https://t.me/quannv27) | [Contact](vanquan805@gmail.com)
