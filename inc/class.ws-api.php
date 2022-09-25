@@ -47,6 +47,7 @@ if (!class_exists('WS_API')) {
             $new_product = $product_id !== null ? wc_get_product($product_id) : new WC_Product_Simple();
 
             $new_product->set_name($body['name']);
+            $new_product->set_sku($body['sku']);
             $new_product->set_price($body['price']);
             $new_product->set_regular_price($body['regular_price']);
             $new_product->set_sale_price($body['sale_price']);
