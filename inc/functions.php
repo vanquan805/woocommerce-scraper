@@ -7,12 +7,33 @@
  * To change this template use File | Settings | File Templates.
  */
 
+
+function ws_get_exist_attachment($url)
+{
+    $attachments = get_posts(array(
+        'post_type' => 'attachment',
+        'meta_query' => array(
+            array(
+                'key' => '_ws_source_url',
+                'value' => $url,
+                'compare' => '=',
+            )
+        )
+    ));
+
+    return isset($attachments) && count($attachments) > 0 ? $attachments[0]->ID : null;
+}
+
 function ws_upload_from_url($url, $title = null)
 {
     require_once(ABSPATH . "/wp-load.php");
     require_once(ABSPATH . "/wp-admin/includes/image.php");
     require_once(ABSPATH . "/wp-admin/includes/file.php");
     require_once(ABSPATH . "/wp-admin/includes/media.php");
+    $exit_attachment_id = ws_get_exist_attachment($url);
+
+    if ($exit_attachment_id !== null)
+        return $exit_attachment_id;
 
     // Download url to a temp file
     $tmp = download_url($url);
@@ -26,7 +47,7 @@ function ws_upload_from_url($url, $title = null)
 
     // Do the upload
     $attachment_id = media_handle_sideload($args, 0, $title);
-
+    update_post_meta($attachment_id, '_ws_source_url', $url);
     // If error uploading, delete the temp file abort
     if (is_wp_error($attachment_id)) {
         @unlink($tmp);
