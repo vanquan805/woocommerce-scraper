@@ -193,9 +193,6 @@ if (!class_exists('WS_Scraper_Post')) {
         function render_meta_box($post)
         {
             wp_nonce_field('ws_scraper_box', 'ws_scraper_box_nonce');
-
-            $fields = ws_metabox_get_general_fields($post);
-
             include WooCommerce_Scraper::instance()->plugin_directory . 'templates/scraper-metabox.php';
         }
 
@@ -207,6 +204,7 @@ if (!class_exists('WS_Scraper_Post')) {
                 '_ws_source_url',
                 '_wp_list_product_url_selectors',
                 '_ws_product_title_selector',
+                '_ws_product_sku_selector',
                 '_ws_product_image_selector',
                 '_ws_product_gallery_selectors',
                 '_ws_product_price_selector',

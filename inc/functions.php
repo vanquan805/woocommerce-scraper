@@ -50,6 +50,7 @@ function ws_get_scraper($post_id)
         '_ws_source_url' => get_post_meta($post->ID, '_ws_source_url', true),
         '_wp_list_product_url_selectors' => get_post_meta($post->ID, '_wp_list_product_url_selectors', true),
         '_ws_product_title_selector' => get_post_meta($post->ID, '_ws_product_title_selector', true),
+        '_ws_product_sku_selector' => get_post_meta($post->ID, '_ws_product_sku_selector', true),
         '_ws_product_image_selector' => get_post_meta($post->ID, '_ws_product_image_selector', true),
         '_ws_product_regular_price_selector' => get_post_meta($post->ID, '_ws_product_regular_price_selector', true),
         '_ws_product_sale_price_selector' => get_post_meta($post->ID, '_ws_product_sale_price_selector', true),
@@ -177,7 +178,7 @@ function ws_api_delete_scraper($post_id)
     return false;
 }
 
-function ws_metabox_get_general_fields($post)
+function ws_metabox_get_category_fields($post)
 {
     $categories = get_categories(array(
         'taxonomy' => 'product_cat',
@@ -213,12 +214,44 @@ function ws_metabox_get_general_fields($post)
             'value' => get_post_meta($post->ID, '_wp_list_product_url_selectors', true),
             'placeholder' => '.product-item'
         ),
+        '_ws_next_page_selector' => array(
+            'label' => esc_html__('Next Page Selector', 'woocommerce-scraper'),
+            'name' => '_ws_next_page_selector',
+            'type' => 'text',
+            'value' => get_post_meta($post->ID, '_ws_next_page_selector', true),
+            'placeholder' => '.next-page'
+        ),
+    ));
+}
+
+function ws_metabox_get_single_product_fields($post)
+{
+    $categories = get_categories(array(
+        'taxonomy' => 'product_cat',
+        'hide_empty' => false
+    ));
+
+    $categories = array_map(function ($item) {
+        return array(
+            'value' => $item->term_id,
+            'name' => $item->name
+        );
+    }, $categories);
+
+    return apply_filters('ws-metabox-single-product-fields', array(
         '_ws_product_title_selector' => array(
             'label' => esc_html__('Product Title Selector', 'woocommerce-scraper'),
             'name' => '_ws_product_title_selector',
             'type' => 'text',
             'value' => get_post_meta($post->ID, '_ws_product_title_selector', true),
             'placeholder' => '.product-item'
+        ),
+        '_ws_product_sku_selector' => array(
+            'label' => esc_html__('Product SKU Selector', 'woocommerce-scraper'),
+            'name' => '_ws_product_sku_selector',
+            'type' => 'text',
+            'value' => get_post_meta($post->ID, '_ws_product_sku_selector', true),
+            'placeholder' => '.product-sku'
         ),
         '_ws_product_image_selector' => array(
             'label' => esc_html__('Product Image Selector', 'woocommerce-scraper'),
@@ -268,14 +301,7 @@ function ws_metabox_get_general_fields($post)
             'type' => 'text',
             'value' => get_post_meta($post->ID, '_ws_product_description_selector', true),
             'placeholder' => '.entry-content'
-        ),
-        '_ws_next_page_selector' => array(
-            'label' => esc_html__('Next Page Selector', 'woocommerce-scraper'),
-            'name' => '_ws_next_page_selector',
-            'type' => 'text',
-            'value' => get_post_meta($post->ID, '_ws_next_page_selector', true),
-            'placeholder' => '.next-page'
-        ),
+        )
     ));
 }
 

@@ -1,7 +1,13 @@
 <div class="tab-content">
-    <div class="tab-item active" id="ws-scraper-metabox-general">
+    <div class="tab-item active" id="ws-scraper-metabox-category">
         <?php
-        $fields = isset($post) ? ws_metabox_get_general_fields($post) : [];
+        $fields = isset($post) ? ws_metabox_get_category_fields($post) : [];
+        include WooCommerce_Scraper::instance()->plugin_directory . 'templates/meta-boxes/metabox.php';
+        ?>
+    </div>
+    <div class="tab-item" id="ws-scraper-metabox-single-product">
+        <?php
+        $fields = isset($post) ? ws_metabox_get_single_product_fields($post) : [];
         include WooCommerce_Scraper::instance()->plugin_directory . 'templates/meta-boxes/metabox.php';
         ?>
     </div>
