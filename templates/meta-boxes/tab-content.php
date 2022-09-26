@@ -33,7 +33,7 @@
             $message = __('You are using Woocommerce Free version. For the best experience, you should ', 'woocommerce-scraper');
             $upgrade_message = __('Upgrade to Premium.', 'woocommerce-scraper');
 
-            printf('<p>%2$s<a href="https://lienlau.com"><b>%3$s</b></a></p>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
+            printf('<p>%2$s<a href="https://t.me/quannv27"><b>%3$s</b></a></p>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
         } ?>
     </div>
 </div>
