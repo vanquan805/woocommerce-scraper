@@ -94,6 +94,9 @@ if (!class_exists('WooCommerce_Scraper')) {
 
             array_unshift($links_array, '<a href="' . admin_url('edit.php?post_type=ws-scrapers&page=woocommerce-scraper-settings') . '">' . esc_html__('Settings', 'woocommerce-scraper') . '</a>');
 
+            if (ws_is_license_key_expired())
+                $links_array[] = '<a href="https://t.me/quannv27"><b>' . esc_html__('Upgrade to Premium', 'woocommerce-scraper') . '</b></a>';
+
             return $links_array;
         }
 

@@ -114,19 +114,19 @@ if (!class_exists('WS_Settings')) {
                     $message = __('You are using Woocommerce Free version. For the best experience, you should ', 'woocommerce-scraper');
                     $upgrade_message = __('Upgrade to Premium.', 'woocommerce-scraper');
 
-                    printf('<div class="%1$s"><p>%2$s<a href="https://lienlau.com"><b>%3$s</b></a></p></div>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
+                    printf('<div class="%1$s"><p>%2$s<a href="https://t.me/quannv27"><b>%3$s</b></a></p></div>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
                 } else if (ws_is_license_key_expired()) {
                     $class = 'notice notice-error';
                     $message = __('Your license key is expired. Please renew your license key for ', 'woocommerce-scraper');
                     $upgrade_message = __('Upgrading to Premium.', 'woocommerce-scraper');
 
-                    printf('<div class="%1$s"><p>%2$s<a href="https://lienlau.com"><b>%3$s</b></a></p></div>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
+                    printf('<div class="%1$s"><p>%2$s<a href="https://t.me/quannv27"><b>%3$s</b></a></p></div>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
 
                     $class = 'notice notice-warning';
                     $message = __('You are using Woocommerce Free version. For the best experience, you should ', 'woocommerce-scraper');
                     $upgrade_message = __('Upgrade to Premium.', 'woocommerce-scraper');
 
-                    printf('<div class="%1$s"><p>%2$s<a href="https://lienlau.com"><b>%3$s</b></a></p></div>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
+                    printf('<div class="%1$s"><p>%2$s<a href="https://t.me/quannv27"><b>%3$s</b></a></p></div>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
                 }
             }
         }
