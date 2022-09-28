@@ -16,11 +16,10 @@ With just a little understanding of DevTools of browsers and HTML, you can easil
 
 **SCREENSHOTS**
 
-![category](assets/screenshots/screenshot-1.png)
 ![single product](assets/screenshots/screenshot-2.png)
-![attributes](assets/screenshots/screenshot-3.png)
-![Settings](assets/screenshots/screenshot-4.png)
 ![Results](assets/screenshots/screenshot-5.png)
+
+**TUTORIALS**
 
 [Webiste](https://wooscraper.com/) | [Support](https://t.me/quannv27) | [Contact](mailto:vanquan805@gmail.com)
 
