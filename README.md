@@ -1,6 +1,6 @@
 **THE #1 SCRAPING PLUGIN FOR WOOCOMMERCE.**
 
-WooCommerce Scraper is the best scraping product solution for WooCommerce, allowing users to scrape any e-commerce website. Fix any other scraping plugin issues.
+WooCommerce Scraper is the best scraping solution for WooCommerce, allowing users to scrape any e-commerce website. Fix any other scraping plugin issues.
 
 **RUNNING ON ALL HOSTING, VPS**
 
