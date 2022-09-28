@@ -268,9 +268,10 @@ if (!class_exists('WS_Scraper_Post')) {
         {
             $screen = get_current_screen();
             if ($screen->post_type === 'ws-scrapers' && ($hook === 'post-new.php' || $hook === 'post.php')) {
+                wp_dequeue_script( 'autosave' );
+
                 wp_enqueue_style('ws-scraper.css', WooCommerce_Scraper::instance()->plugin_directory_uri . '/assets/css/main.css', null, WooCommerce_Scraper::instance()->version, 'all');
                 wp_enqueue_script('ws-scraper.js', WooCommerce_Scraper::instance()->plugin_directory_uri . '/assets/js/main.js', array('jquery'), WooCommerce_Scraper::instance()->version, true);
-
                 $fields = apply_filters('ws-metabox-attribute-template-fields',
                     array(
                         array(
