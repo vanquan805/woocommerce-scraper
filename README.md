@@ -10,4 +10,6 @@ As you know, some hosting providers don't support virtual cron, so some scraping
 
 Our plugin supports the collection of data rendered by Javascript that other plugins can't do.
 
-[Webiste](https://lienlau.com/) | [Support](https://t.me/quannv27) | [Contact](mailto:vanquan805@gmail.com)
+[Webiste](https://wooscraper.com/) | [Support](https://t.me/quannv27) | [Contact](mailto:vanquan805@gmail.com)
+
+Developed by [lienlau.com](https://lienlau.com)
