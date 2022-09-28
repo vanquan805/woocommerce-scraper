@@ -12,4 +12,4 @@ Our plugin supports the collection of data rendered by Javascript that other plu
 
 [Webiste](https://wooscraper.com/) | [Support](https://t.me/quannv27) | [Contact](mailto:vanquan805@gmail.com)
 
-Developed by [lienlau.com](https://lienlau.com)
+© 2022 Developed by [lienlau.com](https://lienlau.com)
