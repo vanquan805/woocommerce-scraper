@@ -5,4 +5,6 @@
        class="nav-tab"><?php _e('Single Product', 'woocommerce-scraper') ?></a>
     <a href="#" data-target="#ws-scraper-metabox-attributes"
        class="nav-tab"><?php _e('Attributes', 'woocommerce-scraper') ?> <span class="ws-badge ws-badge-premium"><?php _e('Premium', 'woocommerce-scraper') ?></span></a>
+    <a href="#" data-target="#ws-scraper-metabox-currency"
+       class="nav-tab"><?php _e('Convert Currency', 'woocommerce-scraper') ?></a>
 </nav>

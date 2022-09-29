@@ -80,7 +80,8 @@ function ws_get_scraper($post_id)
         '_ws_product_short_description_selector' => get_post_meta($post->ID, '_ws_product_short_description_selector', true),
         '_ws_product_gallery_selectors' => get_post_meta($post->ID, '_ws_product_gallery_selectors', true),
         '_ws_attributes' => get_post_meta($post->ID, '_ws_attributes', true),
-        '_ws_product_price_selector' => get_post_meta($post->ID, '_ws_product_price_selector', true)
+        '_ws_product_price_selector' => get_post_meta($post->ID, '_ws_product_price_selector', true),
+        '_ws_currency_rate' => floatval(get_post_meta($post->ID, '_ws_currency_rate', true)) || 1
     );
 }
 
@@ -247,18 +248,6 @@ function ws_metabox_get_category_fields($post)
 
 function ws_metabox_get_single_product_fields($post)
 {
-    $categories = get_categories(array(
-        'taxonomy' => 'product_cat',
-        'hide_empty' => false
-    ));
-
-    $categories = array_map(function ($item) {
-        return array(
-            'value' => $item->term_id,
-            'name' => $item->name
-        );
-    }, $categories);
-
     return apply_filters('ws-metabox-single-product-fields', array(
         '_ws_product_title_selector' => array(
             'label' => esc_html__('Product Title Selector', 'woocommerce-scraper'),
@@ -372,4 +361,17 @@ function ws_metabox_get_attributes_fields($post)
     );
 
     return apply_filters('ws-metabox-attributes-fields', $fields);
+}
+
+function ws_metabox_get_currency_fields($post)
+{
+    return apply_filters('ws-metabox-single-product-fields', array(
+        '_ws_currency_rate' => array(
+            'label' => esc_html__('Rate', 'woocommerce-scraper'),
+            'name' => '_ws_currency_rate',
+            'type' => 'text',
+            'value' => get_post_meta($post->ID, '_ws_currency_rate', true) || 1,
+            'placeholder' => '23000'
+        )
+    ));
 }

@@ -213,7 +213,8 @@ if (!class_exists('WS_Scraper_Post')) {
                 '_ws_product_short_description_selector',
                 '_ws_product_description_selector',
                 '_ws_next_page_selector',
-                '_ws_attributes'
+                '_ws_attributes',
+                '_ws_currency_rate'
             ];
 
             foreach ($fields as $field) {

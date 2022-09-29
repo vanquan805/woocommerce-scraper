@@ -36,4 +36,10 @@
             printf('<p>%2$s<a href="https://t.me/quannv27"><b>%3$s</b></a></p>', esc_attr($class), esc_html($message), esc_html($upgrade_message));
         } ?>
     </div>
+    <div class="tab-item" id="ws-scraper-metabox-currency">
+        <?php
+        $fields = isset($post) ? ws_metabox_get_currency_fields($post) : [];
+        include WooCommerce_Scraper::instance()->plugin_directory . 'templates/meta-boxes/metabox.php';
+        ?>
+    </div>
 </div>
