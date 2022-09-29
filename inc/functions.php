@@ -64,6 +64,9 @@ function ws_get_scraper($post_id)
 
     if (!isset($post)) return null;
 
+    $rate = floatval(get_post_meta($post->ID, '_ws_currency_rate', true));
+    $rate = $rate > 0 ? $rate : 1;
+
     return array(
         'post_title' => $post->post_title,
         '_ws_source_id' => $post->ID,
@@ -81,7 +84,7 @@ function ws_get_scraper($post_id)
         '_ws_product_gallery_selectors' => get_post_meta($post->ID, '_ws_product_gallery_selectors', true),
         '_ws_attributes' => get_post_meta($post->ID, '_ws_attributes', true),
         '_ws_product_price_selector' => get_post_meta($post->ID, '_ws_product_price_selector', true),
-        '_ws_currency_rate' => floatval(get_post_meta($post->ID, '_ws_currency_rate', true)) || 1
+        '_ws_currency_rate' => $rate
     );
 }
 
@@ -365,12 +368,15 @@ function ws_metabox_get_attributes_fields($post)
 
 function ws_metabox_get_currency_fields($post)
 {
+    $rate = floatval(get_post_meta($post->ID, '_ws_currency_rate', true));
+    $rate = $rate > 0 ? $rate : 1;
+
     return apply_filters('ws-metabox-currency-fields', array(
         '_ws_currency_rate' => array(
             'label' => esc_html__('Rate', 'woocommerce-scraper'),
             'name' => '_ws_currency_rate',
             'type' => 'text',
-            'value' => get_post_meta($post->ID, '_ws_currency_rate', true) || 1,
+            'value' => $rate,
             'placeholder' => '23000'
         )
     ));

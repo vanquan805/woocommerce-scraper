@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Scraper
  * Plugin URI: https://lienlau.com
  * Description: The best scraping plugin for WooCommerce
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Nguyen Quan
  * Author URI: https://lienlau.com
  * License: A "Slug" license name e.g. GPL2
