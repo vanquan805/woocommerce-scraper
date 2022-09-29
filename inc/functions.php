@@ -377,7 +377,8 @@ function ws_metabox_get_currency_fields($post)
             'name' => '_ws_currency_rate',
             'type' => 'text',
             'value' => $rate,
-            'placeholder' => '23000'
+            'placeholder' => '23000',
+            'description'=>__('Example: Convert USD to EUR. The rate is 0.97.', 'woocommerce-scraper')
         )
     ));
 }
