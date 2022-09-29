@@ -365,7 +365,7 @@ function ws_metabox_get_attributes_fields($post)
 
 function ws_metabox_get_currency_fields($post)
 {
-    return apply_filters('ws-metabox-single-product-fields', array(
+    return apply_filters('ws-metabox-currency-fields', array(
         '_ws_currency_rate' => array(
             'label' => esc_html__('Rate', 'woocommerce-scraper'),
             'name' => '_ws_currency_rate',
