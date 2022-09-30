@@ -21,7 +21,7 @@ if (!class_exists('WS_Update')) {
         public function __construct()
         {
             $this->cache_key = 'woocommerce-scraper-update';
-            $this->cache_allowed = false;
+            $this->cache_allowed = true;
 
             add_filter('plugins_api', array($this, 'info'), 20, 3);
             add_filter('site_transient_update_plugins', array($this, 'update'));

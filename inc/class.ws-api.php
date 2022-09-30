@@ -84,7 +84,7 @@ if (!class_exists('WS_API')) {
                     $new_product->set_attributes($attributes);
             }
 
-            $new_product->set_status('draft');
+            $new_product->set_status(ws_get_product_status());
 
             $new_product->save();
             $product_id = $new_product->get_id();

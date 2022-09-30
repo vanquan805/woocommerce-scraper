@@ -95,6 +95,14 @@ function ws_get_license_key()
     return $options['_ws_license_key'] ?? null;
 }
 
+
+function ws_get_product_status()
+{
+    $options = get_option('woocommerce-scraper_options');
+    return $options['_ws_product_status'] ?? 'draft';
+}
+
+
 function ws_api_get_license_key_info()
 {
     $license_key = ws_get_license_key();

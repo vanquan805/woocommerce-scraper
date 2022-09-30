@@ -45,6 +45,30 @@ if (!class_exists('WS_Settings')) {
                     'description' => __('Enter the license key that you have bought.', 'woocommerce-scraper')
                 )
             );
+
+
+            add_settings_section(
+                'woocommerce-scraper_product',
+                __('Product', 'woocommerce-scraper'), array($this, 'add_product_section'),
+                'woocommerce-scraper'
+            );
+
+            add_settings_field(
+                '_ws_product_status',
+                __('Product Status', 'woocommerce-scraper'),
+                array($this, 'add_field'),
+                'woocommerce-scraper',
+                'woocommerce-scraper_product',
+                array(
+                    'label_for' => '_ws_product_status',
+                    'type' => 'select',
+                    'select_options' => array(
+                        array('value'=> 'publish', 'name' => __('Publish', 'woocommerce-scraper')),
+                        array('value'=> 'draft', 'name' => __('Draft', 'woocommerce-scraper'))
+                    ),
+                    'description' => __('Set default status for product.', 'woocommerce-scraper')
+                )
+            );
         }
 
         function add_license_section($args)
@@ -54,11 +78,9 @@ if (!class_exists('WS_Settings')) {
             <?php
         }
 
-        function add_api_section($args)
+        function add_product_section($args)
         {
-            ?>
-            <p id="<?php echo esc_attr($args['id']); ?>"><?php esc_html_e('Set API Key to store products', 'woocommerce-scraper'); ?></p>
-            <?php
+
         }
 
         function add_field($args)
