@@ -88,20 +88,17 @@ function ws_get_scraper($post_id)
     );
 }
 
-
 function ws_get_license_key()
 {
     $options = get_option('woocommerce-scraper_options');
     return $options['_ws_license_key'] ?? null;
 }
 
-
 function ws_get_product_status()
 {
     $options = get_option('woocommerce-scraper_options');
     return $options['_ws_product_status'] ?? 'draft';
 }
-
 
 function ws_api_get_license_key_info()
 {
