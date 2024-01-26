@@ -21,6 +21,6 @@ With just a little understanding of DevTools of browsers and HTML, you can easil
 
 **TUTORIALS**
 
-[Webiste](https://wooscraper.com/) | [Support](https://t.me/quannv27) | [Contact](mailto:vanquan805@gmail.com)
+[Webiste](https://lienlau.com/) | [Support](https://t.me/quannv27) | [Contact](mailto:vanquan805@gmail.com)
 
 © 2022 Developed by [lienlau.com](https://lienlau.com)
